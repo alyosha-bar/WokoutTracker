@@ -1,0 +1,86 @@
+
+.home {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+}
+
+.workouts {
+    width: 80%;
+    min-width: 600px;
+}
+
+.exercises-list {
+    width: 85%;
+    padding: 2%;
+    margin: 2%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.exercise-card {
+    background-color: beige;
+    width: 250px;
+    height: 350px;
+    margin: 2%;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid darkblue;
+    border-radius: 8px;
+}
+
+.exercise-card:hover {
+    cursor: pointer;
+}
+
+.calendar-group {
+    display: flex;
+    width: 100%;
+    margin-top: 10%;
+    justify-content: space-between;
+}
+
+.new-workout {
+    height: 90%;
+    width: 30%;
+    border-left: 2px solid darkblue;
+}
+
+form {
+    padding: 10%;
+    height: 100%;
+}
+
+.label-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    vertical-align: middle;
+}
+
+.title {
+    padding: 2%;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+}
+
+/* label {
+    text-align: center;
+} */
+
+input {
+    width: 60%;
+    padding: 2%;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 2%;
+    margin: 5% 0;
+}

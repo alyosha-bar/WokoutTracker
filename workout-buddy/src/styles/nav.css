@@ -1,0 +1,41 @@
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    /* background-color: beige; */
+    border-bottom: 1.5px solid darkblue;
+    border-radius: 1px;
+    width: 95vw;
+}
+
+.navbar a{
+    padding: 2%;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: darkblue;
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 12vh;
+    margin-right: 40px;
+}
+
+.sign-out-btn {
+    width: 120px;
+    height: 5vh;
+    min-height: 30px;
+    margin-right: 15px;
+}
+
+.sign-out-btn:hover {
+    cursor: pointer;
+}
