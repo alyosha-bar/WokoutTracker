@@ -8,11 +8,24 @@ import supabase from '../supabaseClient'
 const Home = () => {
 
     const [workouts, setWorkouts] = useState([])
+    const [exercises, setExercises] = useState([])
     const navigate = useNavigate()
 
     const { user } = useUser()
 
     useEffect( () => {
+
+        const getExercises = async () => {
+            const {data, error} = await supabase
+            .from("Exercises")
+            .select()
+
+            if(data) {
+                setExercises(data)
+            } else {
+                console.log("error")
+            }
+        }
 
 
         const getWorkouts = async () => {
@@ -20,8 +33,6 @@ const Home = () => {
             .from("Workouts")
             .select("name, preferred_day, preferred_time")
             .eq("user_email", `${user.primaryEmailAddress}`)
-            
-            console.log(user)
 
             if(data) {
                 setWorkouts(data)
@@ -32,7 +43,8 @@ const Home = () => {
 
 
         if (user) {
-            getWorkouts() 
+            getWorkouts()
+            getExercises()
         } else {
             navigate('/hero')
         }
@@ -55,6 +67,7 @@ const Home = () => {
         e.preventDefault()
 
         console.log("Form Submitted!")
+        console.log(exercises)
     }
 
 
@@ -89,6 +102,17 @@ const Home = () => {
                     <div className='label-group'>
                         <label for="preferred_day"> Preferred Day: </label>
                         <input type="text" name="preferred_day" placeholder="Preferred Day"/>
+                    </div>
+                        
+                    <div className="label-group">
+                        <label for="exercises"> Exercises: </label>
+                    { exercises && (
+                        <ul className='exercises' name='exercises'>
+                            {exercises.map( exercise => (
+                                <div className="exercise"> {exercise.name} </div>
+                            ))}
+                        </ul>
+                    )}
                     </div>
 
                     <div className='label-group'>

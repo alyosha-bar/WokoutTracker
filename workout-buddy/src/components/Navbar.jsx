@@ -16,7 +16,7 @@ const Navbar = (user) => {
                     <nav className="navbar">
                         <div className="nav-group">
                             <Link to="/"> Home </Link>
-                            <Link to="/new"> Add / Register Workouts </Link>
+                            {/* <Link to="/new"> Add / Register Workouts </Link> */}
                             <Link to="/calendar"> View Calendar </Link>
                             <button className="sign-out-btn" onClick={() => signOut(() => navigate('/'))}>
                                 Sign Out
