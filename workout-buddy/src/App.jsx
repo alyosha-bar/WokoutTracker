@@ -4,6 +4,7 @@ import { Link, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Home from "./components/Home.jsx";
 import Hero from "./components/Hero.jsx";
+import Workout from "./components/Workout.jsx";
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
       <Route path="/hero" element={ <Hero /> } />
       <Route path="/new" element={ <> NEW EXERCISE </> } />
       <Route path="/calendar" element={ <> CALENDAR </> } />
-      <Route path="/workouts/:id" element={ <> WORKOUT </> } />
+      <Route path="/workouts/:id" element={ <Workout /> } />
     </Routes>
     </>
   )
