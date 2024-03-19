@@ -11,6 +11,8 @@ const Home = () => {
     const [exercises, setExercises] = useState([])
     const navigate = useNavigate()
 
+    const [formExercises, setFormExercises] = useState([])
+
     const { user } = useUser()
 
     useEffect( () => {
@@ -71,6 +73,31 @@ const Home = () => {
     }
 
 
+    const addToExercises = (e, exercise) => {
+        e.preventDefault()
+
+        // add execises to a 
+        setFormExercises( // Replace the state
+        [ // with a new array
+          ...formExercises, // that contains all the old items
+          exercise // and one new item at the end
+        ]
+      );
+
+      console.log("added to array.")
+    }
+
+    const removeExercise = (e, exercise) => {
+        e.preventDefault()
+
+        // remove from state array
+        setFormExercises(formExercises => {
+            return formExercises.filter(formExercise => formExercise !== exercise)
+        })
+
+        console.log("removed.")
+    }
+
     return ( 
     <>
         <div className="home">
@@ -105,11 +132,22 @@ const Home = () => {
                     </div>
                         
                     <div className="label-group">
-                        <label for="exercises"> Exercises: </label>
+                        <label for="form-exercises"> Exercises: </label>
+                        { formExercises && (
+                            <ul className="form-exercises">
+                                {formExercises.map( exercise => (
+                                    <div onClick={(e) => { removeExercise(e, exercise);}} className='exercise-panel'> {exercise.name} </div>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+
+                    <div className='label-group'>
+                    <label for="exercises"> Choose: </label>
                     { exercises && (
                         <ul className='exercises' name='exercises'>
                             {exercises.map( exercise => (
-                                <div className="exercise"> {exercise.name} </div>
+                                <button onClick={(e) => { addToExercises(e, exercise)} } className="exercise"> {exercise.name} </button>
                             ))}
                         </ul>
                     )}

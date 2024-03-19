@@ -57,6 +57,26 @@ form {
     height: 100%;
 }
 
+.exercises {
+    display: flex;
+}
+
+.exercise {
+    padding: 5%;
+    margin: 1px;
+}
+
+.form-exercises {
+    display: flex;
+}
+
+.exercise-panel {
+    padding: 5%;
+    background-color: forestgreen;
+    margin: 1px;
+    color: black;
+}
+
 .label-group {
     display: flex;
     justify-content: space-between;
@@ -69,10 +89,6 @@ form {
     font-size: 1.7rem;
     margin-bottom: 15px;
 }
-
-/* label {
-    text-align: center;
-} */
 
 input {
     width: 60%;
