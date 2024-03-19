@@ -125,11 +125,6 @@ const Home = () => {
                         <label for="name">Name: </label>
                         <input type="text" name="name" placeholder="Name"/>
                     </div>
-
-                    <div className='label-group'>
-                        <label for="preferred_day"> Preferred Day: </label>
-                        <input type="text" name="preferred_day" placeholder="Preferred Day"/>
-                    </div>
                         
                     <div className="label-group">
                         <label for="form-exercises"> Exercises: </label>
@@ -156,6 +151,11 @@ const Home = () => {
                     <div className='label-group'>
                         <label for="preferred_time"> Preferred Time: </label>
                         <input type="time" name="preferred_time" placeholder="Preferred Time"/>
+                    </div>
+
+                    <div className='label-group'>
+                        <label for="preferred_day"> Preferred Day: </label>
+                        <input type="text" name="preferred_day" placeholder="Preferred Day"/>
                     </div>
 
                     <button className='submit-btn' type='submit'> Create New Workout </button>

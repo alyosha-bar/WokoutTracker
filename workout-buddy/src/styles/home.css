@@ -58,23 +58,33 @@ form {
 }
 
 .exercises {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .exercise {
     padding: 5%;
-    margin: 1px;
+    margin: 2px;
+    width: 90px;
 }
 
 .form-exercises {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.exercise-panel:hover {
+    background-color: rgb(204, 137, 137);
+    cursor: pointer;
 }
 
 .exercise-panel {
+    width: 90px;
     padding: 5%;
     background-color: forestgreen;
-    margin: 1px;
+    margin: 2px;
     color: black;
+    text-align: center;
 }
 
 .label-group {
